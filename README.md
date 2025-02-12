@@ -2,11 +2,15 @@
 This code was produced to calulate standard index timeseries based on three different distribution types: LogLogistic, Gamma, and NonParametric. <br>
 
 ## Notes
-Leap days in this code are considered in sumation at each timestep however, the values on Feb 29th are repeated from Feb 28th.
+Leap days in this code are considered in summation at each timestep however, the values on Feb 29th are repeated from Feb 28th.
 
 ## How to run the code
-This is a pretty bare bones repository and will require a bit of coding knowlage from the individual running it.
-To run the code open file standard_index_example.py in your faveorite python IDE and run the code.
+This is a bare bones repository and will require a bit of coding knowledge from the individual running it.
+To run the code open file standard_index_example.py in your favorite python IDE and run the code.
+
+To run the code on your own data, ensure it is in the propper format.
+A pandas dataframe w/ datetime index and a single data column.
+The length argument is dependent on the timestep of the data.
 
 ## LogLogistic
 Based on journal article cited below. <br>
