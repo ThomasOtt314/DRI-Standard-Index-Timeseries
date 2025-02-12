@@ -2,7 +2,11 @@
 This code was produced to calulate standard index timeseries based on three different distribution types: LogLogistic, Gamma, and NonParametric. <br>
 
 ## Notes
-Leap days are removed from the timeseries before the calulation is made. They are not returned in the output dataframe.
+Leap days in this code are considered in sumation at each timestep however, the values on Feb 29th are repeated from Feb 28th.
+
+## How to run the code
+This is a pretty bare bones repository and will require a bit of coding knowlage from the individual running it.
+To run the code open file standard_index_example.py in your faveorite python IDE and run the code.
 
 ## LogLogistic
 Based on journal article cited below. <br>
