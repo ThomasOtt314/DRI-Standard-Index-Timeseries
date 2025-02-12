@@ -48,9 +48,9 @@ def get_standard_index_loglogistic(df_in, length, start_year, end_year):
     # Build apply function
     def apply_func(row):
         # Define variables of interest from row
-        target_value = row[0]
-        target_month_day = row[1]
-        target_year = row[2]
+        target_value = row.iloc[0]
+        target_month_day = row.iloc[1]
+        target_year = row.iloc[2]
 
         # get data array
         data_array = month_day_climo[target_month_day]
@@ -166,9 +166,9 @@ def get_standard_index_gamma(df_in, length, start_year, end_year):
 
     def apply_func(row):
         # Define variables of interest from row
-        target_value = row[0]
-        target_month_day = row[1]
-        target_year = row[2]
+        target_value = row.iloc[0]
+        target_month_day = row.iloc[1]
+        target_year = row.iloc[2]
 
         # get data array
         climo_array = month_day_climo[target_month_day]
@@ -265,8 +265,8 @@ def get_standard_index_nonparametric(df_in, length, start_year, end_year):
 
     def apply_func(row):
         # Define variables of interest from row
-        target_value = row[0]
-        target_month_day = row[1]
+        target_value = row.iloc[0]
+        target_month_day = row.iloc[1]
 
         # get climo array
         climo_array = month_day_climo[target_month_day]

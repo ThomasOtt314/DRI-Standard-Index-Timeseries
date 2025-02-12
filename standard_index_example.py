@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 
 import utils
@@ -7,7 +8,7 @@ import utils
 # ----------------------------------------------------------------------------
 
 # Import example data
-pr_df = pd.read_csv('example_data_input\ppt_daily.csv')
+pr_df = pd.read_csv(os.path.join('example_data_input', 'ppt_daily.csv'))
 
 # Build datetime index and drop date column
 pr_df.index = pd.to_datetime(pr_df['date']).drop(columns=['date'])
@@ -19,7 +20,7 @@ spi_df = utils.get_standard_index_gamma(df_in=pr_df,
                                         start_year=1991,
                                         end_year=2020)
 
-spi_df.to_csv('example_data_output/30_day_spi_gamma.csv')
+spi_df.to_csv(os.path.join('example_data_output', '30_day_spi_gamma.csv'))
 spi_df=None
 
 
@@ -28,7 +29,7 @@ spi_df=None
 # ----------------------------------------------------------------------------
 
 # Import example data
-ppt_df = pd.read_csv('example_data_input\ppt_monthly.csv')
+ppt_df = pd.read_csv(os.path.join('example_data_input', 'ppt_monthly.csv'))
 
 # Build datetime index and drop date column
 ppt_df.index = pd.to_datetime(ppt_df['date']).drop(columns=['date'])
@@ -40,7 +41,7 @@ spi_df = utils.get_standard_index_gamma(df_in=ppt_df,
                                         start_year=1991,
                                         end_year=2020)
 
-spi_df.to_csv('example_data_output/2_month_spi_gamma.csv')
+spi_df.to_csv(os.path.join('example_data_output', '2_month_spi_gamma.csv'))
 spi_df=None
 
 
@@ -49,7 +50,7 @@ spi_df=None
 # ----------------------------------------------------------------------------
 
 # Import example data
-ppt_pet_df = pd.read_csv('example_data_input\ppt_pet_daily.csv')
+ppt_pet_df = pd.read_csv(os.path.join('example_data_input', 'ppt_pet_daily.csv'))
 
 # Build datetime index and drop date column
 ppt_pet_df.index = pd.to_datetime(ppt_pet_df['date']).drop(columns=['date'])
@@ -61,7 +62,7 @@ spei_df = utils.get_standard_index_loglogistic(df_in=ppt_pet_df,
                                                start_year=1981,
                                                end_year=2020)
 
-spei_df.to_csv('example_data_output/30_day_spei_loglogistic.csv')
+spei_df.to_csv(os.path.join('example_data_output', '30_day_spei_loglogistic.csv'))
 spei_df=None
 
 
@@ -70,7 +71,7 @@ spei_df=None
 # ----------------------------------------------------------------------------
 
 # Import example data
-ppt_pet_df = pd.read_csv('example_data_input\ppt_pet_monthly.csv')
+ppt_pet_df = pd.read_csv(os.path.join('example_data_input', 'ppt_pet_monthly.csv'))
 
 # Build datetime index and drop date column
 ppt_pet_df.index = pd.to_datetime(ppt_pet_df['date']).drop(columns=['date'])
@@ -82,18 +83,8 @@ spei_df = utils.get_standard_index_nonparametric(df_in=ppt_pet_df,
                                                  start_year=1981,
                                                  end_year=2020)
 
-spei_df.to_csv('example_data_output/3_month_spei_nonparametric.csv')
+spei_df.to_csv(os.path.join('example_data_output', '3_month_spei_nonparametric.csv'))
 spei_df=None
-
-
-
-
-
-
-
-
-
-
 
 
 
